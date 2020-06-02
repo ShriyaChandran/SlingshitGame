@@ -14,16 +14,16 @@ function setup(){
 
     ground = new Ground(400,385,800,30)
     ball = new Box(30,200,40,40,"blue");
-    box1 = new Box(698,142,40,40,"cyan");
-    box2 = new Box(470,142,40,40,"Yellow");
+    box1 = new Box(749,142,40,40,"cyan");
+    box2 = new Box(692,142,40,40,"Yellow");
     box3 = new Box(511,142,40,40,"black");
     box4 = new Box(545,142,40,40,"magenta");
     box5 = new Box(588,142,40,40,"khaki");
     box6 = new Box(628,142,40,40,"purple");
-    platform = new Ground(580,200,350,30);
+    platform = new Ground(650,200,350,30);
     slingshot = new Slingshot(ball.body,{
         x: 154,
-        y: 221
+        y: 210
     });
 
 }
@@ -45,10 +45,16 @@ function draw(){
 }
 
 function mouseDragged(){
-    Matter.Body.setPosition(ball.body, {x: 40 , y: 40});
+    Matter.Body.setPosition(ball.body, {x: mouseX, y: mouseY});
 }
 
 
 function mouseReleased(){
     slingshot.fly();
+}
+function keyPressed(){
+    if (keyCode===32){
+        Matter.Body.setPosition(ball.body,{x:30,y:200});
+        slingshot.attach(ball.body);
+    }
 }
