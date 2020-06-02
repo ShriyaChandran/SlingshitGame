@@ -1,6 +1,5 @@
 class Ground{
     constructor(x,y,width,height){
-        console.log("insideTheConstructor");
         var options = {
             'restitution':0.02,
             'friction': 1,
@@ -13,11 +12,8 @@ class Ground{
         World.add(world, this.body);
     }
     display(){
-        console.log("insideFunctionDisplay");
         var pos =this.body.position;
-        console.log(pos);
         var angle = this.body.angle;
-        console.log(angle);
         //push();
         rectMode(CENTER);
         //translate(pos.x,pos.y);

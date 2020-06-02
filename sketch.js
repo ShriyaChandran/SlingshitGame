@@ -13,7 +13,7 @@ function setup(){
     world = engine.world;
 
     ground = new Ground(400,385,800,30)
-    ball = new Box(30,200,40,40,"blue");
+    ball = new Ball(30,200,40,40);
     box1 = new Box(749,142,40,40,"cyan");
     box2 = new Box(692,142,40,40,"Yellow");
     box3 = new Box(511,142,40,40,"black");
